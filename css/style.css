@@ -134,9 +134,22 @@ body {
   margin-top: 5px;
 }
 
-
 .attribution {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .container::before ,
+  .container::after {
+    width: 1000px;
+    height: 1000px;
+  }
+  .container::before {
+    transform: translate(-330px, -530px);
+  }
+  .container::after {
+    transform: translate(300px, 630px);
+  }
 }
