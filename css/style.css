@@ -1,0 +1,142 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Kumbh', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(185, 75%, 39%);
+  z-index: -1;
+  display: flex;
+}
+.container::before ,
+.container::after {
+  content: '';
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+}
+.container::before {
+  background-image: url('../images/bg-pattern-top.svg');
+  top: 0;
+  left: 0;
+  transform: translate(-350px, -300px);
+}
+.container::after {
+  background-image: url('../images/bg-pattern-bottom.svg');
+  bottom: 0;
+  right: 0;
+  transform: translate(390px, 250px);
+}
+
+.card {
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  max-width: 95%;
+}
+.card__content {
+  width: 320px;
+  max-width: 100%;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.card__content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 40%;
+  background: url('../images/bg-pattern-card.svg');
+}
+.card__userImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
+}
+.card__userImage > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+.card__userInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+.card__userInfo h4 {
+  color: hsl(229, 23%, 23%);
+  font-weight: 700;
+  margin: 5px auto 0;
+}
+.card__userInfo h4 span {
+  color: hsl(0, 0%, 59%);
+  font-weight: 400;
+  margin-left: 5px;
+}
+.card__userInfo h5 {
+  margin: 5px auto 0;
+  color: hsl(0, 0%, 59%);
+  letter-spacing: 1px;
+}
+.card__userStats {
+  border-top: .5px solid hsl(0, 0%, 86%);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.card__userStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__userStat span:nth-child(1){
+  color: hsl(229, 23%, 23%);
+  font-size: 18px;
+  font-weight: 700;
+}
+.card__userStat span:nth-child(2){
+  color: hsl(0, 0%, 59%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
